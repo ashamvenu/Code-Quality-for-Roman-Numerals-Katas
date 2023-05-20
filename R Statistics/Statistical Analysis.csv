@@ -1,0 +1,11 @@
+Metrics,Treatments,Mean,Standard Deviation,T-test
+Code Coverage (%),TDD,93.45,9.2630988,93.45
+,non-TDD,99,0.4242641,99
+Working Hours,TDD,5.15,0.212132,5.15
+,non-TDD,5.1,0.1414214,5.1
+Number of Lines,TDD,90.5,33.23402,90.5
+,non-TDD,90,65.05382,90
+Runtime (sec),TDD,0.0775,0.02757716,0.0775
+,non-TDD,0.1615,0.06434672,0.1615
+Methods,TDD,28.5,10.606602,28.5
+,non-TDD,10,1.414214,10

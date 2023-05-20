@@ -1,0 +1,5 @@
+Treatments,Code Coverage,Working Hours,Lines ,Runtime,Methods
+TDD,86.9,5,114,0.097,36
+TDD,100,5.3,67,0.058,21
+non-TDD,99.3,5.2,136,0.207,9
+non-TDD,98.7,5,44,0.116,11

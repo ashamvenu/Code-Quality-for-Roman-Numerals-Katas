@@ -1,0 +1,22 @@
+input_data <- read.csv(file="database.csv",head=TRUE,sep=",")
+print(input_data)
+library(ggplot2)
+library(plotly)
+ggplot(input_data, aes(x=Treatments, y=Code.Coverage, fill=Treatments)) + geom_boxplot() + coord_cartesian(ylim = c(85, 100)) + ggtitle("Boxplot for Code Coverage") + theme(plot.title = element_text(color = "black", hjust = 0.5, size = 12, face = "italic"))
+ggplot(input_data, aes(x=Treatments, y=Working.Hours, fill=Treatments)) + geom_boxplot() + ggtitle("Boxplot for Working Hours") + theme(plot.title = element_text(color = "black", hjust = 0.5, size = 12, face = "italic"))
+ggplot(input_data, aes(x=Treatments, y=Lines, fill=Treatments)) + geom_boxplot() + ggtitle("Boxplot for Number of Lines") + theme(plot.title = element_text(color = "black", hjust = 0.5, size = 12, face = "italic"))
+ggplot(input_data, aes(x=Treatments, y=Runtime, fill=Treatments)) + geom_boxplot() + ggtitle("Boxplot for Runtime") + theme(plot.title = element_text(color = "black", hjust = 0.5, size = 12, face = "italic"))
+ggplot(input_data, aes(x=Treatments, y=Methods, fill=Treatments)) + geom_boxplot() + ggtitle("Boxplot for Methods") + theme(plot.title = element_text(color = "black", hjust = 0.5, size = 12, face = "italic"))
+library(data.table)
+DT <- data.table(input_data)
+DT
+DT[, sapply(.SD, function(x) list(mean=mean(x), sd=sd(x))), by=Treatments]
+t.test(Code.Coverage ~ Treatments, data = input_data, var.equal = TRUE)
+t.test(Working.Hours ~ Treatments, data = input_data, var.equal = TRUE)
+t.test(Lines ~ Treatments, data = input_data, var.equal = TRUE)
+t.test(Runtime ~ Treatments, data = input_data, var.equal = TRUE)
+t.test(Methods ~ Treatments, data = input_data, var.equal = TRUE)
+require(moonBook)
+require(webr)
+plot(t.test(Code.Coverage ~ Treatments, data = input_data, var.equal = TRUE))
+

@@ -1,0 +1,3 @@
+Programming tools: R(R-4.0.2)
+IDE: RStudio
+Packages to be installed: ggplot2, plotly, data.table, moonBook, webr
